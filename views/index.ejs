@@ -1,0 +1,30 @@
+<!-- Define a function to render each record -->
+<% function renderGoal(msg) { %>
+    <li>
+      <strong>Sender:</strong> <%= msg.sender %><br />
+      <strong>Recipient:</strong> <%= msg.recipient %><br />
+      <strong>Content:</strong> <%= msg.content %><br />
+     
+    </li>
+    <% } %>
+    
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../public/styles.css">
+        <title>Send Recipient</title>
+      </head>
+      <body>
+        <h1>Sender Recipent List</h1>
+        <ul>
+          <% if (sendrecips.length > 0) { %>
+          <!-- Call the renderGoal function for each record -->
+          <% sendrecips.forEach(renderGoal); %> <% } else { %>
+          <li>No sendrecips found.</li>
+          <% } %>
+        </ul>
+      </body>
+    </html>
+    
